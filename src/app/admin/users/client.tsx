@@ -16,7 +16,9 @@ export default function AdminUsersClient({ user, allUsers }: { user: any, allUse
                 <main className="main-content">
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '32px' }}>
                         <h1 style={{ fontSize: '28px', margin: 0 }}>User Management</h1>
-                        <button onClick={() => setIsModalOpen(true)} className="btn btn-primary">+ Add New User</button>
+                        <button onClick={() => setIsModalOpen(true)} className="btn btn-primary">
+                            + Add New User
+                        </button>
                     </div>
 
                     <div className="card" style={{ padding: 0, overflow: 'hidden' }}>
@@ -37,7 +39,7 @@ export default function AdminUsersClient({ user, allUsers }: { user: any, allUse
                                             <td>{u.email}</td>
                                             <td>
                                                 <span className={`badge ${u.role === 'Admin' ? 'badge-error' :
-                                                        u.role === 'Department' ? 'badge-pending' : 'badge-success'
+                                                    u.role === 'Department' ? 'badge-pending' : 'badge-success'
                                                     }`}>
                                                     {u.role}
                                                 </span>

@@ -27,7 +27,7 @@ export default async function SchoolDashboard() {
                 <main className="main-content">
                     <h1 style={{ fontSize: '28px', fontWeight: '400', marginBottom: '32px' }}>School Dashboard</h1>
 
-                    <div style={{ display: 'flex', gap: '16px', marginBottom: '32px' }}>
+                    <div style={{ display: 'flex', gap: '16px', marginBottom: '32px', alignItems: 'flex-start' }}>
                         <Link href="/school/upload" className="btn btn-primary">
                             <Upload size={18} />
                             Upload New Document

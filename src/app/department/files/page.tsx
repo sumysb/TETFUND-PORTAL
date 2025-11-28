@@ -27,7 +27,9 @@ export default async function DepartmentFilesPage() {
                 <main className="main-content">
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '32px' }}>
                         <h1 style={{ fontSize: '28px', margin: 0 }}>My Files</h1>
-                        <button className="btn btn-primary">+ Upload File</button>
+                        <button className="btn btn-primary">
+                            + Upload File
+                        </button>
                     </div>
 
                     <div className="card" style={{ padding: 0, overflow: 'hidden' }}>
