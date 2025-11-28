@@ -31,10 +31,22 @@ export async function uploadFile(prevState: any, formData: FormData) {
             [userId, title, `/uploads/${filename}`, description]
         );
 
-        // Notify all Department users
-        const deptUsers = await pool.query("SELECT user_id FROM users WHERE role = 'Department'");
-        for (const dept of deptUsers.rows) {
-            await createNotification(dept.user_id, 'New File', `New file uploaded: ${title}`);
+        // Fetch uploader role
+        const uploaderRes = await pool.query('SELECT role, name FROM users WHERE user_id = $1', [userId]);
+        const uploader = uploaderRes.rows[0];
+
+        if (uploader.role === 'School') {
+            // Notify Department
+            const deptUsers = await pool.query("SELECT user_id FROM users WHERE role = 'Department'");
+            for (const dept of deptUsers.rows) {
+                await createNotification(dept.user_id, 'New File', `New file from ${uploader.name}: ${title}`);
+            }
+        } else if (uploader.role === 'Department') {
+            // Notify Schools (or all users for now)
+            const schoolUsers = await pool.query("SELECT user_id FROM users WHERE role = 'School'");
+            for (const school of schoolUsers.rows) {
+                await createNotification(school.user_id, 'New File', `New file from Department: ${title}`);
+            }
         }
 
         return { message: 'File uploaded successfully!' };

@@ -35,3 +35,28 @@ export async function reportIssue(prevState: any, formData: FormData) {
         return { error: 'Failed to report issue' };
     }
 }
+
+export async function updateIssueStatus(issueId: number, newStatus: string) {
+    const pool = getPgPool();
+    try {
+        await pool.query(
+            'UPDATE issues SET status = $1 WHERE issue_id = $2',
+            [newStatus, issueId]
+        );
+
+        // Fetch issue details to notify reporter
+        const issueRes = await pool.query('SELECT school_id, issue_description FROM issues WHERE issue_id = $1', [issueId]);
+        const issue = issueRes.rows[0];
+
+        if (issue) {
+            await createNotification(issue.school_id, 'Issue Update', `Your issue "${issue.issue_description.substring(0, 20)}..." is now ${newStatus}`);
+        }
+
+        revalidatePath('/department/issues');
+        revalidatePath('/admin/issues');
+        return { success: true };
+    } catch (error) {
+        console.error('Update issue status error:', error);
+        return { error: 'Failed to update status' };
+    }
+}

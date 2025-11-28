@@ -20,7 +20,7 @@ export default async function DepartmentDashboard() {
     SELECT COUNT(*) FROM files f 
     JOIN users u ON f.user_id = u.user_id 
     WHERE u.role = 'School'
-  `); // Simplification: treating all school uploads as requests
+  `);
 
     return (
         <div className="grid-dashboard">
@@ -37,7 +37,7 @@ export default async function DepartmentDashboard() {
                                 {pendingRequests.rows[0].count}
                             </div>
                             <div style={{ marginTop: '16px' }}>
-                                <Link href="/department/requests" className="btn btn-primary" style={{ width: '100%' }}>
+                                <Link href="/department/requests" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
                                     Review Requests
                                 </Link>
                             </div>
@@ -46,12 +46,12 @@ export default async function DepartmentDashboard() {
                         <div className="card">
                             <h3 style={{ fontSize: '16px', color: 'var(--md-sys-color-on-surface-variant)', marginBottom: '8px' }}>Quick Actions</h3>
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                                <button className="btn btn-secondary" style={{ justifyContent: 'flex-start' }}>
+                                <Link href="/department/upload" className="btn btn-secondary" style={{ justifyContent: 'flex-start', width: '100%' }}>
                                     📤 Upload Response File
-                                </button>
-                                <button className="btn btn-secondary" style={{ justifyContent: 'flex-start' }}>
+                                </Link>
+                                <Link href="/department/issues" className="btn btn-secondary" style={{ justifyContent: 'flex-start', width: '100%' }}>
                                     📝 Update Issue Status
-                                </button>
+                                </Link>
                             </div>
                         </div>
                     </div>
