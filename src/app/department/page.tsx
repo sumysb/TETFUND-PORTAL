@@ -37,7 +37,7 @@ export default async function DepartmentDashboard() {
                                 {pendingRequests.rows[0].count}
                             </div>
                             <div style={{ marginTop: '16px' }}>
-                                <Link href="/department/requests" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
+                                <Link href="/department/requests" className="btn btn-primary">
                                     Review Requests
                                 </Link>
                             </div>
@@ -45,11 +45,11 @@ export default async function DepartmentDashboard() {
 
                         <div className="card">
                             <h3 style={{ fontSize: '16px', color: 'var(--md-sys-color-on-surface-variant)', marginBottom: '8px' }}>Quick Actions</h3>
-                            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                                <Link href="/department/upload" className="btn btn-secondary" style={{ justifyContent: 'flex-start', width: '100%' }}>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', alignItems: 'flex-start' }}>
+                                <Link href="/department/upload" className="btn btn-secondary">
                                     📤 Upload Response File
                                 </Link>
-                                <Link href="/department/issues" className="btn btn-secondary" style={{ justifyContent: 'flex-start', width: '100%' }}>
+                                <Link href="/department/issues" className="btn btn-secondary">
                                     📝 Update Issue Status
                                 </Link>
                             </div>
