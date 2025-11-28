@@ -5,23 +5,16 @@ export default function Home() {
   return (
     <div className="flex-center" style={{ minHeight: '100vh', flexDirection: 'column', gap: '32px', background: 'linear-gradient(180deg, #eef2ff 0%, #ffffff 100%)' }}>
       <div style={{ textAlign: 'center', animation: 'fadeIn 0.5s ease-out' }}>
-        <div style={{
-          width: '64px',
-          height: '64px',
-          background: 'linear-gradient(135deg, var(--md-sys-color-primary), var(--md-sys-color-secondary))',
-          borderRadius: '16px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          color: 'white',
-          fontWeight: 'bold',
-          fontSize: '32px',
-          margin: '0 auto 24px auto',
-          boxShadow: 'var(--md-sys-elevation-3)'
-        }}>T</div>
-        <h1 style={{ fontSize: '48px', fontWeight: '700', marginBottom: '16px', color: '#1e1b4b', letterSpacing: '-0.5px' }}>
-          TETFUND Portal
-        </h1>
+        <img
+          src="/assets/logo.png"
+          alt="TETFUND Logo"
+          style={{
+            height: '80px',
+            objectFit: 'contain',
+            margin: '0 auto 24px auto',
+            display: 'block'
+          }}
+        />
         <p style={{ color: '#475569', fontSize: '18px', maxWidth: '500px', margin: '0 auto', lineHeight: '1.6' }}>
           Secure Communication and File-Management Platform for Tertiary Institutions
         </p>
@@ -56,9 +49,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div style={{ marginTop: '32px', color: '#94a3b8', fontSize: '13px' }}>
-        &copy; 2024 TETFUND. All rights reserved.
-      </div>
+      {/* Copyright removed as requested */}
     </div>
   );
 }

@@ -97,9 +97,7 @@ export default function Sidebar({ role }: { role: string }) {
             </nav>
 
             <div style={{ borderTop: '1px solid var(--md-sys-color-outline-variant)', paddingTop: '16px', marginTop: '16px' }}>
-                <div style={{ padding: '0 12px', fontSize: '12px', color: 'var(--md-sys-color-on-surface-variant)' }}>
-                    &copy; 2024 TETFUND Portal
-                </div>
+                {/* Copyright removed as requested */}
             </div>
         </div>
     );
