@@ -28,17 +28,11 @@ async function LoginContent({ searchParams }: { searchParams: Promise<{ role?: s
                 alignItems: 'center'
             }}>
                 <div style={{ marginBottom: '16px' }}>
-                    {/* Google G Logo Placeholder - using T for TETFUND */}
-                    <div style={{
-                        fontSize: '24px',
-                        fontWeight: 'bold',
-                        color: 'var(--md-sys-color-primary)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '8px'
-                    }}>
-                        <span style={{ fontSize: '28px' }}>TETFUND</span>
-                    </div>
+                    <img
+                        src="/assets/logo.png"
+                        alt="TETFUND"
+                        style={{ height: '48px', objectFit: 'contain' }}
+                    />
                 </div>
 
                 <h1 style={{

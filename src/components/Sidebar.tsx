@@ -55,17 +55,15 @@ export default function Sidebar({ role }: { role: string }) {
     return (
         <div className="sidebar">
             <div style={{ padding: '0 12px 32px 12px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-                <div style={{
-                    width: '32px',
-                    height: '32px',
-                    background: 'linear-gradient(135deg, var(--md-sys-color-primary), var(--md-sys-color-secondary))',
-                    borderRadius: '8px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: 'white',
-                    fontWeight: 'bold'
-                }}>T</div>
+                <img
+                    src="/assets/logo.png"
+                    alt="TETFUND Logo"
+                    style={{ height: '40px', objectFit: 'contain' }}
+                    onError={(e) => {
+                        e.currentTarget.style.display = 'none';
+                        e.currentTarget.nextElementSibling?.removeAttribute('style'); // Show text fallback if needed, though we are keeping text separate
+                    }}
+                />
                 <span style={{ fontSize: '20px', fontWeight: '500', color: 'var(--md-sys-color-on-surface)', fontFamily: 'var(--font-family-brand)' }}>
                     TETFUND
                 </span>
