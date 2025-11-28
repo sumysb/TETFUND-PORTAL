@@ -1,12 +1,13 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import logo from '@/assets/logo.png';
 
 export default function Home() {
   return (
     <div className="flex-center" style={{ minHeight: '100vh', flexDirection: 'column', gap: '32px', background: 'linear-gradient(180deg, #eef2ff 0%, #ffffff 100%)' }}>
       <div style={{ textAlign: 'center', animation: 'fadeIn 0.5s ease-out' }}>
         <img
-          src="/assets/logo.png"
+          src={logo.src}
           alt="TETFUND Logo"
           style={{
             height: '80px',

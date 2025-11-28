@@ -1,6 +1,7 @@
 import LoginForm from '@/components/LoginForm';
 import Link from 'next/link';
 import { Suspense } from 'react';
+import logo from '@/assets/logo.png';
 
 export default function LoginPage(props: { searchParams: Promise<{ role?: string }> }) {
     return (
@@ -29,7 +30,7 @@ async function LoginContent({ searchParams }: { searchParams: Promise<{ role?: s
             }}>
                 <div style={{ marginBottom: '16px' }}>
                     <img
-                        src="/assets/logo.png"
+                        src={logo.src}
                         alt="TETFUND"
                         style={{ height: '48px', objectFit: 'contain' }}
                     />

@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import logo from '@/assets/logo.png';
 import {
     LayoutDashboard,
     Users,
@@ -56,7 +57,7 @@ export default function Sidebar({ role }: { role: string }) {
         <div className="sidebar">
             <div style={{ padding: '0 12px 32px 12px', display: 'flex', alignItems: 'center', gap: '12px' }}>
                 <img
-                    src="/assets/logo.png"
+                    src={logo.src}
                     alt="TETFUND Logo"
                     style={{ height: '40px', objectFit: 'contain' }}
                     onError={(e) => {
